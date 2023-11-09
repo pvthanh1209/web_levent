@@ -1,0 +1,414 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clear {
+    clear: both;
+}
+
+.header-banner {
+    width: 100%;
+    height: 34px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+}
+
+.header-top {
+    width: 100%;
+    height: 75px;
+    border-bottom: 1px solid #D4D4D4;
+    background-color: #fff;
+}
+
+    .header-top li {
+        display: inline-flex;
+    }
+
+.hd-logo img {
+    margin-left: 650px;
+    margin-top: 13px;
+}
+
+.hd-list ul {
+    margin-left: 270px;
+}
+
+.hd-list li {
+    padding: 0px 15px;
+}
+
+.header-bot li {
+    display: inline-flex;
+    margin-left: 60px;
+    padding: 10px;
+    margin-top: 7px;
+}
+
+.header-bot {
+    height: 50px;
+}
+
+    .header-bot li a {
+        text-decoration: none;
+        color: #5A5A5A;
+        font-family: Sans-serif;
+        font-size: 15px;
+        font-weight: 100;
+    }
+
+    .header-bot li i {
+        color: #5A5A5A;
+        font-size: 10px;
+    }
+
+    .header-bot li:hover {
+        border-bottom: 1px solid #ccc;
+    }
+
+.slider img {
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+}
+
+.text a {
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    margin-top: -120px;
+    margin-left: 585px;
+    color: #000;
+    width: 360px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #fff;
+    font-size: 15px;
+    font-family: sans-serif;
+ 
+}
+
+    .text a:hover {
+        transition: 0.3s linear;
+        background-color: #000;
+        color: #fff;
+    }
+
+.sec-title {
+    text-align: center;
+    padding-top: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.clo-4 {
+    width: 25%;
+}
+
+.img img {
+    width: 350px;
+    height: 450px;
+}
+
+.item .des a {
+    text-decoration: none;
+    color: #7F7F7F;
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 100;
+    font-family: "SVN-Futura Medium", sans-serif;
+}
+
+.item .des .price {
+    font-size: 18px;
+    margin-left: 10px;
+    font-family: "SVN-Futura light", sans-serif;
+    font-weight: 100;
+}
+
+.item .des {
+    line-height: 1.5;
+}
+
+.clo-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sec-btn {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+    .sec-btn a {
+        text-decoration: none;
+        color: #646161;
+        border: 1px solid #ccc;
+        padding: 5px 100px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+
+        .sec-btn a:hover {
+            transition: 0.3s linear;
+            background-color: #646161;
+            color: #fff;
+        }
+
+.title-video {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.slider-video {
+    position: relative;
+    width: auto;
+    height: 600px;
+    margin-top: 1px;
+}
+
+.video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-video a {
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 525px;
+    margin-left: 580px;
+    color: #000;
+    width: 310px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #fff;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.text-video:hover a {
+    transition: 0.3s linear;
+    background-color: #000;
+    color: #fff;
+}
+
+.text-stylist h2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+}
+
+.sty-img img {
+    position: relative;
+    width: 500px;
+    height: auto;
+    margin-left: 160px;
+}
+
+.sty-subtitle {
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    margin-left: 250px;
+    cursor: default;
+    margin-bottom: 1.5rem;
+}
+
+    .sty-subtitle a {
+        text-decoration: none;
+        font-size: 10px;
+        color: #5A5A5A;
+    }
+
+        .sty-subtitle a:hover {
+            margin-top: 6px;
+            background-color: #000;
+            color: #fff;
+            padding: 8px 20px;
+        }
+
+.stylist {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 150px;
+}
+
+.col-2 {
+    margin-bottom: 40px;
+}
+
+.address-mess {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 80px;
+}
+
+.maps iframe {
+    width: 50%;
+    height: 500px;
+    float: left;
+}
+
+.message {
+    margin-right: 30px;
+    width: 45%;
+    height: 500px;
+    float: right;
+}
+
+    .message .inf {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom: 1px solid #5A5A5A;
+        width: 650px;
+        padding: 1rem 0;
+        transition: 0.2s linear;
+    }
+
+    .message .mess {
+        border: 1px solid #5A5A5A;
+        width: 650px;
+        height: 250px;
+        margin-top: 50px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .message button {
+        width: 200px;
+        height: 30px;
+        margin-top: 30px;
+        background-color: #5A5A5A;
+        color: #fff;
+    }
+
+.con {
+    display: inline-flex;
+    margin-left: 30px;
+}
+ .con p {
+        /* line-height: 3.0; */
+        font-size: 13px;
+ }
+
+footer {
+    font-family: sans-serif;
+    font-weight: 100;
+
+}
+
+.ft-title strong {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #515151;
+}
+
+.contact a {
+    margin-bottom: 30px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.category p {
+    margin-top: 5px;
+    line-height: 4.0;
+    font-size: 14px;
+    color: #515151;
+}
+
+.support p {
+    margin-top: 5px;
+    line-height: 2.5;
+    font-size: 14px;
+    color: #515151;
+}
+
+.shop p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #515151;
+}
+
+.ft-title a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+.ft-title p {
+    margin-top: 20px;
+}
+
+.category a {
+    text-decoration: none;
+    display: block;
+    color: #515151;
+    line-height: 4.0;
+}
+
+.category a:hover {
+        color: #000;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+.icon i {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.footer-con ul {
+    width: 100%;
+    height: 50px;
+    background-color: #D6D6D6;
+    display: inline-flex;
+    list-style: none;
+}
+
+.footer-con a {
+    text-decoration: none;
+    color: #515151;
+    line-height: 50px;
+    font-weight: 100;
+    font-size: 15px;
+    font-family: "SVN-Futura light", sans-serif;
+}
+.footer-con a:hover {
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer-con {
+    margin-top: 200px;
+}

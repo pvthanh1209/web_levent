@@ -1,0 +1,92 @@
+﻿@using web_levent.Models
+@{
+    ViewBag.Title = "Quản lý sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var lstCategory = (List<Category>)ViewBag.ListCategory;
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0">Quản lý sản phẩm</h4>
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Quản lý sản phẩm</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row project-wrapper">
+    <div class="col-lg-12">
+        <div class="card p-0">
+            <div class="card-header d-flex align-items-center">
+                <h4 class="card-title flex-grow-1 mb-0">Quản lý sản phẩm</h4>
+                <div class="flex-shrink-0">
+                    <a href="javascript:void(0)" id="btnAdd" class="btn btn-info btn-sm">Thêm mới</a>
+                </div>
+            </div><!-- end cardheader -->
+            <div class="card-body">
+                <div class="row pb-3">
+                    <div class="col-md-4">
+                        <label>
+                            Tìm kiếm
+                        </label>
+                        <input type="text" class="form-control" id="txtSearch" placeholder="Tên sản phẩm,..." />
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" style="margin-top:27px;" id="btnSearch"><i class="bx bx-search"></i></button>
+                    </div>
+                </div>
+                <table class="table table-centered align-middle" id="tblProduct">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modalsAddEdit" class="modal fade" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 overflow-hidden">
+            <div class="modal-header p-3">
+                <h4 class="card-title mb-0" id="titleModal"></h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="frmProduct">
+                    <input hidden name="ID_Pro" id="ipHiddenId">
+                    <div class="row">
+                        <div class="mb-3 col-md-12">
+                            <label for="Name" class="form-label"> Tên sản phẩm</label>
+                            <input type="text" class="form-control" name="Name_Pro" id="ipName_Pro">
+                        </div>
+                        <div class="mb-3 col-md-12">
+                            <label for="Name" class="form-label"> Danh mục</label>
+                            <select class="form-control" name="ID_Cate" id="ipID_Cate">
+                                <option value="0">--Chọn danh mục--</option>
+                                @if (lstCategory != null && lstCategory.Count > 0)
+                                {
+                                    foreach (var item in lstCategory)
+                                    {
+                                        <option value="@item.ID_Cate">@item.Name_Cate</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-3 col-md-12">
+                            <label for="Name" class="form-label"> Ảnh </label>
+                            <input type="file" class="form-control" name="fileUpLoad" id="ipImg_pro">
+                        </div>
+                        <div class="mb-3 col-md-12">
+                            <label for="Name" class="form-label"> Giá tiền</label>
+                            <input type="number" class="form-control" name="Price_Pro" id="ipPrice_Pro">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnSubmit" type="button" class="btn btn-primary">Lưu</button>
+                        <a href="javascript:void(0);" class="btn btn-link fw-medium" data-bs-dismiss="modal">Đóng</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

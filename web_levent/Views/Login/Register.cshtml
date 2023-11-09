@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Đăng ký";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+
+
+}
+<link href="~/Asset/css/style.css" rel="stylesheet" />
+<main class="main" style="margin: 0px auto;">
+    <div class="sec-80">
+        <h2 class="sec-title form__title">Đăng ký</h2>
+        @if (!string.IsNullOrEmpty(ViewBag.Error))
+        {
+            <label class="fl-col" style="color:red; text-align:center;">@ViewBag.Error</label>
+        }
+        else
+        {
+            <label class="fl-col" style="color:green; text-align:center;">@ViewBag.Success</label>
+        }
+        <div class="form__wrap con">
+            <form action="/Login/Register" method="post" id="mona-login-form">
+                <div class="form">
+                    <input type="text" name="FullName" required="" class="rs-form form__inp" placeholder="Họ và tên">
+                    <input type="text" name="Username" required="" class="rs-form form__inp" placeholder="Tài khoản">
+                    <input type="password" name="Password" required="" class="rs-form form__inp" placeholder="Mật khẩu">
+                    <input type="password" name="RePassword" required="" class="rs-form form__inp" placeholder="Xác nhận mật khẩu">
+                    <input type="text" name="Email" required="" class="rs-form form__inp" placeholder="Email">
+                    <input type="text" name="Phone" required="" class="rs-form form__inp" placeholder="Số điện thoại">
+                    <input type="text" name="Address" required="" class="rs-form form__inp" placeholder="Địa chỉ">
+                    <div class="fl-wrap aln-ct form__bot form__mb">
+                        <button class="rs-form btn-pri c-whi form__submit-small m-btn-loading">
+                            Đăng ký
+                        </button>
+                    </div>
+                    <div id="response-login">
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

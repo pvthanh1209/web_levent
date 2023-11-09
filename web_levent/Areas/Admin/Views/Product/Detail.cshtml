@@ -1,0 +1,141 @@
+﻿@using web_levent.Models
+@model Product
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var nameProduct = (Model != null ? Model.Name_Pro : string.Empty);
+    int productId = (Model != null ? Model.ID_Pro : 0);
+    int cateId = (Model != null ? Model.ID_Cate.Value : 0);
+}
+
+<input type="hidden" id="productId" value="@productId" />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0">Chi tiết sản phẩm</h4>
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Chi tiết sản phẩm</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row project-wrapper">
+    <div class="col-lg-12">
+        <div class="card p-0">
+            <div class="card-header d-flex align-items-center">
+                <h4 class="card-title flex-grow-1 mb-0">Chi tiết sản phẩm <span class="text-danger">@nameProduct</span></h4>
+                <div class="flex-shrink-0">
+                    <a href="javascript:void(0)" id="btnAddĐetail" class="btn btn-info btn-sm">Thêm mới</a>
+                </div>
+            </div><!-- end cardheader -->
+            <div class="card-body">
+                <div class="row pb-3">
+                    <div class="col-md-4">
+                        <label>
+                            Tìm kiếm
+                        </label>
+                        <input type="text" class="form-control" id="txtSearch" placeholder="Tên sản phẩm, màu,..." />
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" style="margin-top:27px;" id="btnSearch"><i class="bx bx-search"></i></button>
+                    </div>
+                </div>
+                <table class="table table-centered align-middle" id="tblProductDetail">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalsDetailAddEdit" class="modal fade" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content border-0 overflow-hidden">
+            <div class="modal-header p-3">
+                <h4 class="card-title mb-0" id="titleModal"></h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="frmProduct">
+                    <input hidden name="ID_Detail" id="ipID_Detail">
+                    <input hidden name="ID_Pro" id="ipID_Pro" value="@productId">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6 class="fs-15">Chi tiết sản phẩm</h6>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="Name" class="form-label"> Tên sản phẩm</label>
+                            <input type="text" class="form-control" name="Name_Pro" id="ipName_Pro">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="Name" class="form-label"> Ảnh </label>
+                            <input type="file" class="form-control" name="fileUpLoad" id="ipImg_pro">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="Name" class="form-label"> Giá tiền</label>
+                            <input type="number" class="form-control" name="Price_Pro" id="ipPrice_Pro">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="Name" class="form-label">Số lượng</label>
+                            <input type="number" class="form-control" name="Quantity_Pro" id="ipQuantity_Pro">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6 class="fs-15">Màu sắc</h6>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="Name" class="form-label"> Màu sắc</label>
+                            <input type="text" class="form-control" name="ColorPr_Name" id="ipColorPr_Name">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="Name" class="form-label"> Ảnh </label>
+                            <input type="file" class="form-control" name="fileUpLoadColor" id="ipImg_ProColor">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="hidden" name="Cate_Id" id="ipCateId" value="@cateId"/>
+                        <div class="col-md-12">
+                            <h6 class="fs-15">Size</h6>
+                        </div>
+                        <div class="mb-3 col-md-12">
+                            <label for="Name" class="form-label">Size</label>
+                            <input type="text" class="form-control" name="Size_Name" id="ipSize_Name">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnSubmitĐetail" type="button" class="btn btn-primary">Lưu</button>
+                        <a href="javascript:void(0);" class="btn btn-link fw-medium" data-bs-dismiss="modal">Đóng</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="addModelShowImage" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 overflow-hidden">
+            <div class="modal-header p-3">
+                <h4 class="card-title mb-0">Hình ảnh theo màu sắc</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="swiper navigation-swiper rounded">
+                                    <div class="swiper-wrapper" id="showImage">
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
